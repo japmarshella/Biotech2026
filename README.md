@@ -1,4 +1,4 @@
-## Environment and setup
+## ❗Environment and setup❗
 
 Reproducible environments are provided via `environment.yml` (Conda). Create and activate the environment, install the Jupyter kernel, then launch JupyterLab:
 ```bash
@@ -17,53 +17,39 @@ pip install numpy scipy matplotlib seaborn pandas jupyterlab ipykernel
 python -m ipykernel install --user --name=biotech2026
 jupyter lab
 ```
-# Biotechnology 2026 Final Exam
-You are a metabolic engineer optimizing a microbial host to produce a high-value biochemical. Your R&D team has mapped out a critical 4-reaction pathway branch point where central metabolism is diverted toward your target product, modeled by the structural topology shown below:
-<img width="772" height="422" alt="image" src="https://github.com/user-attachments/assets/76891ae0-90fe-4fdb-83d0-c17f15454895" />
+# Biotechnology 2026 Final Exam Answer
 
-• Substrate *X* is maintained at a constant external concentration.
+## Question 1: Choosing the Right Modelling Framework
+🌟 Scenario 1: *Constraint-Based Modeling (Flux Balance Analysis / FBA)*
+FBA simulates cellular metabolism and calculates metabolite fluxes using genome-scale metabolic network reconstructions, enabling predictions of organism growth or metabolite production rates. This framework is appropriate for calculating the maximum theoretical yield, as it focuses on what is achievable at the steady state of a metabolic network.
+   
+🌟 Scenario 2: *Kinetic Modeling (ODE-based)*
+Scenario 2 requires detailed tracking of intermediate B production over a 48‑hour run in order to determine when toxicity levels become dangerous and adjust the process. ODE-based kinetic modeling allows the simulation of real-time metabolite concentration dynamics, enabling the prediction of toxic accumulation over the fermentation cycle.
 
-• Internal pools include intermediates *A*, *B*, and the final target Product *P*.
-
-• Reaction v4 represents an endogenous escape pathway pulling flux into an unwanted byproduct.
-
-• The target Product *P* loops back to exert allosteric, non-competitive feedback inhibition on the initial commitment step (v1).
-
-## Question 1
-*As the lead engineer, you must assign computational tasks based on three distinct troubleshooting scenarios. For each scenario below, choose the most appropriate modeling approach from the options provided and provide a 1-sentence justification.*
-
-Available Frameworks:
-
-A.	Kinetic Modeling (ODE-based)
-
-B.	Constraint-Based Modeling (Flux Balance Analysis / FBA)
-
-C.	Network Topology / Graph Theory
-
-Scenario 1: You need to calculate the maximum theoretical yield of your product across the entire genome-scale metabolic network to see if this strain is commercially viable.
-
-Scenario 2: Your bioreactor runs are failing because intermediate B is highly toxic. You need to simulate the exact, real-time dynamic pooling of metabolite B over a 48-hour fermentation cycle to prevent cell death.
-
-Scenario 3: You want to identify structural ”hubs” or highly connected metabolite nodes in a newly sequenced host organism to ensure your gene knockouts don't accidentally disrupt essential survival pathways
+🌟 Scenario 3: *Network Topology / Graph Theory*
+Network topology / graph theory algorithms (like degree centrality) is the modeling of network topologies as mathematical graphs and computation of various metrics that describe its characteristics. This framework identifies highly connected nodes (HUBS) in the arrangement of metabolic networks, helping avoid unintended disruption of essential pathways when designing knockouts. 
 
 ## Question 2
 **Q2A. Construct the Stoichiometric Matrix (S)**
-
-Fill out the stoichiometric matrix representing this system. Ensure rows represent internal metabolites and columns represent flux rates.
+|    | v1 | v2 | v3 | v4 |
+|----|----|----|----|----|
+|**A**| 1 | -1 | 0 | -1 |
+|**B**| 0 | 1 | -1 | 0 |
+|**P**| 0 | 0 | 1 | 0 |
 
 **Q2B. Formulate the Kinetic Differential Equations**
 
-Write down the baseline Ordinary Differential Equations (ODEs) representing the dynamic changes over time for all three internal pools:	*d*[A]/*dt*, *d*[B]/*dt*, and *d*[P]/*dt*.
+*d*[A]/*dt* = 
+*d*[B]/*dt* = 
+*d*[P]/*dt* = 
 
-Hint: Ignore the allosteric inhibition.
+$$\frac{d[A]}{dt} = v_1 - v_2 - v_4 = \frac{V_{1,max} \cdot [X]}{K_{m1} + [X]} - k_2[A] - k_4[A]$$
+
+$$\frac{d[B]}{dt} = v_2 - v_3 = k_2[A] - k_3[B]$$
+
+$$\frac{d[P]}{dt} = v_3 = k_3[B]$$
 
 **Q2C. Simulate the Kinetic Model**
-
-In non-competitive inhibition, the inhibitor (*P*) binds to an allosteric site, reducing the effective *V*1max, without affecting substrate binding affinity (Km1). The inhibition factor (1 + [*P*]*K*i) multiplies the denominator, reducing the overall reaction velocity as [*P*] increases. When [*P*] = 0, the expression reduces to standard Michaelis-Menten kinetics.
-<img width="248" height="80" alt="image" src="https://github.com/user-attachments/assets/46b4d590-02b1-4cec-9310-02a241b89ac8" />
-
-Combine the inhibition model with the baseline ODEs to simulate the system dynamics using these parameters:
-
 | Parameter	| Meaning                     | Value |
 |-----------|-----------------------------|-----------|
 | *V*1max   | Max rate of *V*1            | 5.0       |
@@ -74,4 +60,4 @@ Combine the inhibition model with the baseline ODEs to simulate the system dynam
 | *k*3 | First-order rate constant for B → P | 0.8 |
 | *k*4 | First-order rate constant for A → *byproduct* | 0.3 |
 
-You can utilize the example in: [**<https://github.com/lab-biotek-bio-ugm/S1_BISB211605_Biotechnology/tree/main>**]
+Run the code here at [💾 CODING](coding.ipynb)
