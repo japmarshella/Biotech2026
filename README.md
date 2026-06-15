@@ -55,4 +55,4 @@ Combine the inhibition model with the baseline ODEs to simulate the system dynam
 | *k*3 | First-order rate constant for B → P | 0.8 |
 | *k*4 | First-order rate constant for A → *byproduct* | 0.3 |
 
-Hint: You can utilize the example in: [**https://github.com/lab-biotek-bio-ugm/S1_BISB211605_Biotechnology**] <https://github.com/lab-biotek-bio-ugm/S1_BISB211605_Biotechnology/tree/main>
+You can utilize the example in: [**<https://github.com/lab-biotek-bio-ugm/S1_BISB211605_Biotechnology/tree/main>**]
