@@ -1,5 +1,3 @@
-# Biotechnology 2026 Final Exam
-
 ## Environment and setup
 
 Reproducible environments are provided via `environment.yml` (Conda). Create and activate the environment, install the Jupyter kernel, then launch JupyterLab:
@@ -19,7 +17,7 @@ pip install numpy scipy matplotlib seaborn pandas jupyterlab ipykernel
 python -m ipykernel install --user --name=biotech2026
 jupyter lab
 ```
-|----------------------------------------------------------------------------------------------------------------|
+# Biotechnology 2026 Final Exam
 You are a metabolic engineer optimizing a microbial host to produce a high-value biochemical. Your R&D team has mapped out a critical 4-reaction pathway branch point where central metabolism is diverted toward your target product, modeled by the structural topology shown below:
 <img width="772" height="422" alt="image" src="https://github.com/user-attachments/assets/76891ae0-90fe-4fdb-83d0-c17f15454895" />
 
