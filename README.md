@@ -2,9 +2,13 @@
 
 You are a metabolic engineer optimizing a microbial host to produce a high-value biochemical. Your R&D team has mapped out a critical 4-reaction pathway branch point where central metabolism is diverted toward your target product, modeled by the structural topology shown below:
 <img width="772" height="422" alt="image" src="https://github.com/user-attachments/assets/76891ae0-90fe-4fdb-83d0-c17f15454895" />
+
 • Substrate *X* is maintained at a constant external concentration.
+
 • Internal pools include intermediates *A*, *B*, and the final target Product *P*.
+
 • Reaction v4 represents an endogenous escape pathway pulling flux into an unwanted byproduct.
+
 • The target Product *P* loops back to exert allosteric, non-competitive feedback inhibition on the initial commitment step (v1).
 
 ## Question 1
