@@ -1,0 +1,14 @@
+name: biotech2026
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - matplotlib
+  - seaborn
+  - pandas
+  - jupyterlab
+  - pip
+  - pip:
+    - ipykernel
