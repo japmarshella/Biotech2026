@@ -46,10 +46,11 @@ In non-competitive inhibition, the inhibitor (*P*) binds to an allosteric site, 
 
 Combine the inhibition model with the baseline ODEs to simulate the system dynamics using these parameters:
 
-| **Parameter**	| **Meaning**             | **Value** |
+| Parameter	| Meaning                     | Value |
+|-----------|-----------------------------|-----------|
 | *V*1max   | Max rate of *V*1            | 5.0       |
 | *K*m1     | Michaelis constant for *V*1 |	2.0       |
-| *K*i      | Inhibition constant	      | 3.0       |
+| *K*i      | Inhibition constant	        | 3.0       |
 | *X*       | External substrate concentration | 10 |
 | *k*2 | First-order rate constant for A → B  |	1.0 |
 | *k*3 | First-order rate constant for B → P | 0.8 |
