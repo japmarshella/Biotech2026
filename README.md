@@ -65,4 +65,7 @@ Network topology / graph theory algorithms (like degree centrality) is the model
 | *k*3 | First-order rate constant for B → P | 0.8 |
 | *k*4 | First-order rate constant for A → *byproduct* | 0.3 |
 
-Run the code here at [💾 CODING](coding.ipynb)
+Run the code here at [💾 **CODING**](coding.ipynb)
+**Simulation Figure:**
+<img width="1052" height="671" alt="image" src="https://github.com/user-attachments/assets/a32d6335-2cef-4ab1-9fc6-e30b91123771" />
+
